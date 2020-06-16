@@ -6,7 +6,7 @@ def char_sum(s: str):
     return sum
 
 
-# Time complexity: O(N)
+# Time complexity: O(M+N)
 # Space complexity: O(1)
 def check_permutation(s1: str, s2: str):
     sum1 = char_sum(s1)
