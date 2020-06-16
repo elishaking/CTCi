@@ -1,3 +1,5 @@
+# Time complexity: O(N)
+# Space complexity: O(1) or O(N) if we think of a string as an array of characters
 def string_compression(s: str):
     new_str = ''
     count = 1

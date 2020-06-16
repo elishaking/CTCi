@@ -1,3 +1,5 @@
+# Time complexity: O(N^2)
+# Space complexity: O(N^2)
 def rotate_matrix(image: list):
     rotated = []
     N = len(image)
