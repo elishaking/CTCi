@@ -1,3 +1,5 @@
+# Time complexity: O(N*M)
+# Space complexity: O(N+M)
 def zero_matrix(matrix: list):
     N = len(matrix)
     M = len(matrix[0])

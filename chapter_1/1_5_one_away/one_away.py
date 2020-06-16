@@ -5,7 +5,7 @@ def get_char(s: str, i: int):
         return None
 
 
-# Time complexity: O(N)
+# Time complexity: O(N), N represents the length of the longer string
 # Space complexity: O(1)
 def one_away(s1: str, s2: str):
     if s1 == s2:
