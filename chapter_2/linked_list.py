@@ -5,12 +5,18 @@ class Node:
 
 
 class LinkedList:
-    def __init__(self, head: Node):
+    def __init__(self, head: Node = None):
         self.head = head
-        self.tail = head
+        self.tail = self.head
 
     def push(self, value: int):
         new_node = Node(value=value)
+        if self.head == None:
+            self.head = new_node
+            self.tail = self.head
+
+            return self
+
         self.tail.next = new_node
         self.tail = new_node
 
