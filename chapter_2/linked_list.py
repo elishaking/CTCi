@@ -5,7 +5,7 @@ class Node:
 
 
 class LinkedList:
-    def __init__(self, head: Node = None):
+    def __init__(self, head: Node):
         self.head = head
         self.tail = head
 
@@ -43,8 +43,9 @@ class LinkedList:
 
     def delete(self, node: Node):
         if node == self.head:
+            temp_node = self.head
             self.head = self.head.next
-            del self.head
+            del temp_node
 
         prev_node = self.head
         current_node = self.head.next
