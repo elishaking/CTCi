@@ -9,8 +9,12 @@ class LinkedList:
         self.head = head
         self.tail = self.head
 
-    def push(self, value: int):
-        new_node = Node(value=value)
+    def push(self, value: int, node: Node = None):
+        if node:
+            new_node = node
+        else:
+            new_node = Node(value=value)
+
         if self.head == None:
             self.head = new_node
             self.tail = self.head
