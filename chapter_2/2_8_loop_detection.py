@@ -1,6 +1,8 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N)
+# Space complexity: O(N)
 def loop_detection(c_list: LinkedList):
     lookup = {}
     current_node = c_list.head

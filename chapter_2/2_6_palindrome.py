@@ -2,6 +2,8 @@ import math
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N)
+# Space complexity: O(N)
 def palindrome(s_list: LinkedList):
     chars = []
     current_node = s_list.head

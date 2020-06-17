@@ -1,6 +1,8 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N)
+# Space complexity: O(N)
 def get_number(s_list: LinkedList):
     num = ''
     current_node = s_list.head
@@ -13,6 +15,8 @@ def get_number(s_list: LinkedList):
     return int(num)
 
 
+# Time complexity: O(N+M)
+# Space complexity: O(N+M)
 def sum_lists(list_1, list_2):
     num1 = get_number(list_1)
     num2 = get_number(list_2)

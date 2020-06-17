@@ -1,6 +1,8 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N)
+# Space complexity: O(N)
 def partition(s_list: LinkedList, partition: int):
     greater_list = LinkedList()
     main_list = LinkedList()

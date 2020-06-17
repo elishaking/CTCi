@@ -1,6 +1,8 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N+M)
+# Space complexity: O(N)
 def intersection(list_1: LinkedList, list_2: LinkedList):
     lookup_1 = {}
     current_node = list_1.head

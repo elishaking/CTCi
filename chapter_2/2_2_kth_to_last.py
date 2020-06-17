@@ -1,6 +1,8 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N)
+# Space complexity: O(N-K)
 def kth_to_last(s_list: LinkedList, k: int):
     pos = 0
     current_node = s_list.head

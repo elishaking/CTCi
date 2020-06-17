@@ -1,6 +1,8 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N)
+# Space complexity: O(N)
 def remove_dups(s_list: LinkedList):
     lookup = {}
     current_node = s_list.head

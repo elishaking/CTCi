@@ -1,6 +1,8 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N)
+# Space complexity: O(1)
 def delete_middle_node(s_list: LinkedList, node: Node):
     s_list.delete(node)
 
