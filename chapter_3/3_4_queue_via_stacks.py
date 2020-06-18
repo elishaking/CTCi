@@ -6,11 +6,15 @@ class MyQueue:
         self.stack_1 = Stack()
         self.stack_2 = Stack()
 
+    # Time complexity: O(1)
+    # Space complexity: O(1)
     def add(self, value=0):
         self.stack_1.push(value)
 
         return self
 
+    # Time complexity: O(1) or O(N)
+    # Space complexity: O(1)
     def remove(self):
         if self.stack_2.is_empty():
             while not self.stack_1.is_empty():

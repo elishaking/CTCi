@@ -13,6 +13,8 @@ class AnimalShelter:
         self.dogs = Queue()
         self.pos = 0
 
+    # Time complexity: O(1)
+    # Space complexity: O(1)
     def enqueue(self, animal: Animal):
         if animal == Animal.cat:
             self.cats.add([animal, self.pos])
@@ -23,6 +25,8 @@ class AnimalShelter:
 
         return self
 
+    # Time complexity: O(1)
+    # Space complexity: O(1)
     def dequeue(self):
         if self.dogs.is_empty() and self.cats.is_empty():
             raise Exception('no animal in shelter')
@@ -41,12 +45,16 @@ class AnimalShelter:
         else:
             return self.dogs.remove()
 
+    # Time complexity: O(1)
+    # Space complexity: O(1)
     def dequeueCat(self):
         if self.cats.is_empty():
             raise Exception('no cats in shelter')
 
         return self.cats.remove()
 
+    # Time complexity: O(1)
+    # Space complexity: O(1)
     def dequeueDog(self):
         if self.dogs.is_empty():
             raise Exception('no dogs in shelter')
@@ -64,4 +72,4 @@ if __name__ == "__main__":
     print(shelter.dequeue())
     print(shelter.dequeue())
     print(shelter.dequeue())
-    print(shelter.dequeue())
+    # print(shelter.dequeue())

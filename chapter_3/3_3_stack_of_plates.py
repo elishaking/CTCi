@@ -14,6 +14,8 @@ class SetOfStacks:
 
         return self.values.pop()
 
+    # Time complexity: O(1)
+    # Space complexity: O(1)
     def pop_at(self, index):
         start_index = index * self.max
         if start_index >= len(self.values):
