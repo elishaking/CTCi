@@ -3,6 +3,9 @@ class Node:
         self.value = value
         self.next = next
 
+    def __str__(self):
+        return str(self.value)
+
 
 class LinkedList:
     def __init__(self, head: Node = None):
@@ -99,6 +102,12 @@ class Queue:
 
     def remove(self):
         return self.values.shift()
+
+    def peek(self):
+        return self.values.head.value
+
+    def is_empty(self):
+        return self.values.head == None
 
     def __str__(self):
         return str(self.values)
