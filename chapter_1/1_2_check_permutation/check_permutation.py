@@ -12,10 +12,7 @@ def check_permutation(s1: str, s2: str):
     sum1 = char_sum(s1)
     sum2 = char_sum(s2)
 
-    if sum1 == sum2:
-        return True
-
-    return False
+    return sum1 == sum2
 
 
 print(check_permutation("same", "same"))
