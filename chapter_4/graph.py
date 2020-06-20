@@ -19,7 +19,7 @@ class BinarySearchTree:
         current_node = self.root
 
         while current_node:
-            if current_node.value < value:
+            if current_node.value > value:
                 if current_node.left:
                     current_node = current_node.left
                 else:
@@ -41,10 +41,10 @@ class BinarySearchTree:
             exp = queue.remove()
             values.append(str(exp.value))
 
-            if exp.value.right:
-                queue.add(exp.value.right)
             if exp.value.left:
                 queue.add(exp.value.left)
+            if exp.value.right:
+                queue.add(exp.value.right)
 
         return str(values)
 
