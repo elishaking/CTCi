@@ -25,6 +25,9 @@ def list_of_depths(bt: BinarySearchTree):
     return nodes
 
 
+# TODO: implement the above with DFS
+
+
 if __name__ == "__main__":
     bst = BinarySearchTree(2).insert(1).insert(3).insert(5).insert(2)
     print(list_of_depths(bst))
