@@ -7,6 +7,9 @@ class BSTNode:
         self.left = left
         self.right = right
 
+    def __str__(self):
+        return str(self.value)
+
 
 class BinarySearchTree:
     def __init__(self, root_value=0):
@@ -21,13 +24,13 @@ class BinarySearchTree:
                     current_node = current_node.left
                 else:
                     current_node.left = BSTNode(value)
+                    return self
             else:
                 if current_node.right:
                     current_node = current_node.right
                 else:
                     current_node.right = BSTNode(value)
-
-        return self
+                    return self
 
     def __str__(self):
         queue = Queue()
@@ -36,10 +39,11 @@ class BinarySearchTree:
 
         while not queue.is_empty():
             exp = queue.remove()
-            values.append(exp.value)
+            values.append(str(exp.value))
 
-            if exp:
+            if exp.value.right:
                 queue.add(exp.value.right)
+            if exp.value.left:
                 queue.add(exp.value.left)
 
         return str(values)
