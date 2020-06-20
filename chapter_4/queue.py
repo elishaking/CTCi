@@ -12,7 +12,7 @@ class LinkedList:
         self.head = head
         self.tail = self.head
 
-    def push(self, value, node: Node = None):
+    def push(self, value: int, node: Node = None):
         if node:
             new_node = node
         else:
@@ -29,7 +29,7 @@ class LinkedList:
 
         return self
 
-    def unshift(self, value):
+    def unshift(self, value: int):
         new_node = Node(value=value, next=self.head)
         self.head = new_node
 
@@ -41,7 +41,7 @@ class LinkedList:
 
         return node
 
-    def insert(self, value, index: int):
+    def insert(self, value: int, index: int):
         current_node = self.head
         current_index = 0
 
@@ -111,15 +111,3 @@ class Queue:
 
     def __str__(self):
         return str(self.values)
-
-
-if __name__ == "__main__":
-    l = LinkedList(Node(10))
-    l.push(5).push(3).push(2)
-
-    print(l)
-
-    node_to_delete = l.head.next
-    print(node_to_delete.value)
-    l.delete(node_to_delete)
-    print(l)
