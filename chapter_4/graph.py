@@ -50,5 +50,5 @@ class BinarySearchTree:
 
 
 if __name__ == "__main__":
-    bst = BinarySearchTree(4).insert(3).insert(10)
+    bst = BinarySearchTree(2).insert(1).insert(3)
     print(bst)
