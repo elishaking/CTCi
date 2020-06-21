@@ -1,6 +1,10 @@
 from linked_list import LinkedList, Node
 
 
+# another way: append to head if lesser, append to tail if greater or equal.
+# that way, can use one linked list, although, no improvements on space
+# and time complexities
+
 # Time complexity: O(N)
 # Space complexity: O(N)
 def partition(s_list: LinkedList, partition: int):
