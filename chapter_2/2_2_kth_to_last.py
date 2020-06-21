@@ -2,27 +2,24 @@ from linked_list import LinkedList, Node
 
 
 # Time complexity: O(N)
-# Space complexity: O(N-K)
+# Space complexity: O(1)
 def kth_to_last(s_list: LinkedList, k: int):
+    runner_node = s_list.head
+    current_node = runner_node
     pos = 0
-    current_node = s_list.head
 
-    while True:
-        if pos == k:
-            break
-
-        current_node = current_node.next
-        if current_node == None:
-            raise Exception('k is out of range')
-
+    while pos < k:
+        runner_node = runner_node.next
         pos += 1
 
-    values = []
-    while current_node:
-        values.append(current_node.value)
+        if not runner_node:
+            raise Exception('index out of range')
+
+    while runner_node:
+        runner_node = runner_node.next
         current_node = current_node.next
 
-    return values
+    return current_node.value
 
 
 if __name__ == "__main__":
