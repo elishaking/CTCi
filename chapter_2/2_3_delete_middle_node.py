@@ -1,10 +1,11 @@
 from linked_list import LinkedList, Node
 
 
-# Time complexity: O(N)
+# Time complexity: O(1)
 # Space complexity: O(1)
 def delete_middle_node(s_list: LinkedList, node: Node):
-    s_list.delete(node)
+    node.value = node.next.value
+    node.next = node.next.next
 
 
 if __name__ == "__main__":
