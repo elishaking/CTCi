@@ -117,6 +117,22 @@ class LinkedList:
 
         return str(values)
 
+    def __eq__(self, other):
+        if self.length != other.length:
+            return False
+
+        current_node = self.head
+        other_node = other.head
+
+        while current_node:
+            if current_node.value != other_node.value:
+                return False
+
+            current_node = current_node.next
+            other_node = other_node.next
+
+        return True
+
 
 if __name__ == "__main__":
     l = LinkedList(Node(10))
@@ -133,3 +149,5 @@ if __name__ == "__main__":
     print(l2)
     print(l2.length)
     print(l2.reverse())
+
+    print(l2 == LinkedList.from_list([5, 4, 3, 2, 1]))
