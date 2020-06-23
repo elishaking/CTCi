@@ -1,4 +1,19 @@
-from linked_list import LinkedList, Node
+from linked_list import LinkedList,
+
+
+# Time complexity: O(N+M)
+# Space complexity: O(N+M)
+def sum_lists(list_1, list_2):
+    num1 = get_number(list_1)
+    num2 = get_number(list_2)
+    sum = num1 + num2
+    values = list(str(sum))
+    res_list = LinkedList()
+
+    for value in values:
+        res_list.unshift(int(value))
+
+    return res_list
 
 
 # Time complexity: O(N)
@@ -17,7 +32,7 @@ def get_number(s_list: LinkedList):
 
 # Time complexity: O(N+M)
 # Space complexity: O(N+M)
-def sum_lists(list_1, list_2):
+def sum_lists2(list_1, list_2):
     num1 = get_number(list_1)
     num2 = get_number(list_2)
     sum = num1 + num2

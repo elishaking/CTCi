@@ -8,12 +8,26 @@ class LinkedList:
     def __init__(self, head: Node = None):
         self.head = head
         self.tail = self.head
+        self.length = 0
+        if head:
+            self.length += 1
+
+    @classmethod
+    def from_list(self, values: list):
+        l_list = LinkedList()
+
+        for value in values:
+            l_list.push(value)
+
+        return l_list
 
     def push(self, value: int, node: Node = None):
         if node:
             new_node = node
         else:
             new_node = Node(value=value)
+
+        self.length += 1
 
         if self.head == None:
             self.head = new_node
@@ -30,6 +44,8 @@ class LinkedList:
         new_node = Node(value=value, next=self.head)
         self.head = new_node
 
+        self.length += 1
+
         return self
 
     def insert(self, value: int, index: int):
@@ -43,6 +59,7 @@ class LinkedList:
             if current_index == index - 1:
                 new_node = Node(value=value, next=current_node.next)
                 current_node.next = new_node
+                self.length += 1
 
                 return self
 
@@ -64,13 +81,14 @@ class LinkedList:
             if node == current_node:
                 prev_node.next = current_node.next
                 del current_node
+                self.length -= 1
 
                 return self
 
             prev_node = prev_node.next
             current_node = current_node.next
 
-        return self
+        raise Exception('node does not exist')
 
     def __str__(self):
         values = []
@@ -93,3 +111,7 @@ if __name__ == "__main__":
     print(node_to_delete.value)
     l.delete(node_to_delete)
     print(l)
+
+    l2 = LinkedList.from_list([1, 2, 3, 4, 5])
+    print(l2)
+    print(l2.length)
