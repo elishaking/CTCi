@@ -90,6 +90,23 @@ class LinkedList:
 
         raise Exception('node does not exist')
 
+    def reverse(self):
+        current_node = self.head
+        next_node = current_node.next
+        current_node.next = None
+
+        while next_node:
+            temp_node = next_node.next
+            next_node.next = current_node
+            current_node = next_node
+            next_node = temp_node
+
+        temp_node = self.head
+        self.head = self.tail
+        self.tail = temp_node
+
+        return self
+
     def __str__(self):
         values = []
         current_node = self.head
@@ -115,3 +132,4 @@ if __name__ == "__main__":
     l2 = LinkedList.from_list([1, 2, 3, 4, 5])
     print(l2)
     print(l2.length)
+    print(l2.reverse())
