@@ -1,9 +1,37 @@
 from linked_list import LinkedList, Node
 
 
+# Time complexity: O(N), N represents the length of the larger linkedlist
+# Space complexity: O(1)
+def intersection(list_1: LinkedList, list_2: LinkedList):
+    if list_1.length > list_2.length:
+        bigger = list_1
+        smaller = list_2
+    else:
+        bigger = list_2
+        smaller = list_1
+
+    bigger_node = bigger.head
+    smaller_node = smaller.head
+    diff = bigger.length - smaller.length
+
+    while diff > 0:
+        bigger_node = bigger_node.next
+        diff -= 1
+
+    while bigger_node:
+        if bigger_node.value == smaller_node.value:
+            return True
+
+        bigger_node = bigger_node.next
+        smaller_node = smaller_node.next
+
+    return False
+
+
 # Time complexity: O(N+M)
 # Space complexity: O(N)
-def intersection(list_1: LinkedList, list_2: LinkedList):
+def intersection_old(list_1: LinkedList, list_2: LinkedList):
     lookup_1 = {}
     current_node = list_1.head
 
@@ -23,11 +51,10 @@ def intersection(list_1: LinkedList, list_2: LinkedList):
 
 
 if __name__ == "__main__":
-    common_node = Node(10)
-    l1 = LinkedList().push(10).push(20).push(None, common_node).push(50)
-    l2 = LinkedList().push(200).push(None, common_node).push(100).push(300)
+    l1 = LinkedList.from_list([1, 2, 3, 4, 5])
+    l2 = LinkedList.from_list([3, 4, 5])
     print(intersection(l1, l2))
 
     # remove intersecting node from l2
-    l2 = LinkedList().push(200).push(100).push(300)
+    l2 = LinkedList.from_list([100, 200, 300])
     print(intersection(l1, l2))
