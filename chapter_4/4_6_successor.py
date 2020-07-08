@@ -34,6 +34,8 @@ class BSTP:
                     return self
 
 
+# Time complexity: O(log(N))
+# Space complexity: O(1)
 def successor(node: BSTNodeP):
     result: BSTNodeP = None
 
@@ -43,6 +45,7 @@ def successor(node: BSTNodeP):
         while result.left:
             result = node.left
     elif node.parent:
+        # get next-right ancestor of input node
         current_node = node
         while current_node.parent and not result:
             if current_node.parent.left == current_node:
